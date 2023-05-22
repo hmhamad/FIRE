@@ -1,0 +1,23 @@
+Seed = 1994
+
+Fixed Dimensions:
+    - b : batch size (e.g. 2)
+    - nr_ty: Number of relation types excluding the no relation type (e.g. 7)
+    - ne_ty: Number of entity types excluding the no entity type (e.g. 6)
+
+Variable Lengths:
+    - ti: Number of token ids in the sentence (e.g. 26)
+    - ne_pn: Number of positive and negative entities, first pos entities then negative entities (e.g. 102)
+    - nr_pn: Number of positive and negative relations, first pos relations then negative relations (e.g. 2)
+
+Batch Contents:
+    - encodings:           shape->[b,ti]; Def->token ids of each sentence in batch; Type->int64; E.g.->[2,26]
+    - context masks:       shape->[b,ti]; Def->Mask for batching encodings; Type->bool; E.g.->[2,26]
+    - entity_masks:        shape->[b,ne_pn,ti]; Def->Mask for each ent in sentence; Type->bool; E.g.->[2,102,26]
+    - entity_sizes:        shape->[b,ne_pn]; Def->Size of each entity span (pos or neg); Type->int64, >=1; E.g.->[2,102]
+    - entity_types:        shape->[b,ti]; Def->Type index of each ent in sentence; Type->int64, >=0 & <=ne_ty; E.g.->[2,102]
+    - rels:                shape->[b,nr_pn,2]; Def->Indices of entity pairs for each pos relation in sentence; Type->int64; E.g.->[2,2,2]
+    - rel_masks:           shape->[b,nr_pn,ti]; Def->mask for relation context (all tokens b/w head and tail ent of the rel, excluding the entities themselves); Type->bool; E.g.->[2,2,26]
+    - rel_types:           shape->[b,nr_pn,nr_ty]; Def->Bool to indicate if relation exists or not from set of possible relations; Type->float32, 0 or 1 (sigmoid output); E.g.->[2,2,7]
+    - entity_sample_masks: shape->[b,ne_pn]; Def->Mask for batching entity types/sizes; Type->bool; E.g.->[2,102]
+    - rel_sample_masks:    shape->[b,nr_pn]; Def->Mask for batching relation types/ent pairs/context; Type->int64; E.g.->[2,2]
