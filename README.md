@@ -1,6 +1,6 @@
 # FIRE Dataset ![Logo](logo.png)
 
-The FIRE Dataset is a dataset of named entities and realtions in the financial domain. Our paper "FIRE: A Dataset for FInancial Relation Extraction" is available on [arXiv](https://arxiv.org/abs/XXXX.XXXX).
+The FIRE Dataset is a dataset of named entities and relations in the financial domain. Our paper "FIRE: A Dataset for FInancial Relation Extraction" is available on [arXiv](https://arxiv.org/abs/XXXX.XXXX).
 
 ## Description
 
