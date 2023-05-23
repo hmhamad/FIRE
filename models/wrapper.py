@@ -52,16 +52,20 @@ class ModelWrapper(ABC):
     def execute(self):
         if self.exp_cfgs.mode == 'train':
             # Loop over each random initialization
+            model_path = self.exp_cfgs.model_path
             for it in range(self.exp_cfgs.n_random_iter):
                 self.exp_cfgs = adjust_for_random_iterations(
                     it, self.exp_cfgs)
-                self.train(self.exp_cfgs.model_path, self.exp_cfgs.train_path,
+                self.train(model_path, self.exp_cfgs.train_path,
                            self.exp_cfgs.valid_path, self.exp_cfgs.log_path)
                 trained_model_path = os.path.join(
                     self.exp_cfgs.log_path, 'best_model')
                 self.eval(trained_model_path, self.exp_cfgs.test_path,
                           self.exp_cfgs.log_path)
                 self.re_logger.summarize_one_iteration(it, data_label='test')
+                # clean
+                os.remove(os.path.join(trained_model_path, 'pytorch_model.bin'))
+                
             self.re_logger.summarize_all_iterations()
 
         elif self.exp_cfgs.mode == 'eval':

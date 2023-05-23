@@ -171,7 +171,7 @@ def train(conf: omegaconf.DictConfig) -> None:
             save_last=False,
             mode=conf.monitor_var_mode,
             period = 1,
-            save_weights_only=True
+            save_weights_only=False
         )
     checkpoint_callback.FILE_EXTENSION = '.bin'
     callbacks_store.append(checkpoint_callback)

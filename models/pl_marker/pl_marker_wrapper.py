@@ -94,7 +94,7 @@ class PLMarkerWrapper(ModelWrapper):
         for key,val in self.exp_cfgs.re_params.configs.items():
             re_exportargs[key] = val
 
-        dataset_path = os.path.join(self.exp_cfgs.log_path,f'ent_pred.json')
+        dataset_path = os.path.join(self.exp_cfgs.log_path,f'ent_pred_test.json')
         re_exportargs[TRANSLATE_ARGS['model_path']] = model_path
         re_exportargs[TRANSLATE_ARGS['dataset_path']] = dataset_path
         re_exportargs[TRANSLATE_ARGS['log_path']] = output_path
@@ -106,11 +106,11 @@ class PLMarkerWrapper(ModelWrapper):
 
         call_pl_marker_re(re_exportargs)
 
-        map_datafile(
-        in_path=os.path.join(self.exp_cfgs.log_path,'predictions.json'),
-        out_path=os.path.join(self.exp_cfgs.log_path,'predictions_standard.json'),
-        from_format='cluster_jsonl',
-        to_format='standard')
+        # map_datafile(
+        # in_path=os.path.join(self.exp_cfgs.log_path,'predictions.json'),
+        # out_path=os.path.join(self.exp_cfgs.log_path,'predictions_standard.json'),
+        # from_format='cluster_jsonl',
+        # to_format='standard')
     
     def predict(self, model_path, dataset_path, output_path):
         # First evaluate NER model and save NER results
@@ -143,7 +143,7 @@ class PLMarkerWrapper(ModelWrapper):
         for key,val in self.exp_cfgs.re_params.configs.items():
             re_exportargs[key] = val
 
-        dataset_path = os.path.join(self.exp_cfgs.log_path,f'ent_pred.json')
+        dataset_path = os.path.join(self.exp_cfgs.log_path,f'ent_pred_predict.json')
         re_exportargs[TRANSLATE_ARGS['model_path']] = model_path
         re_exportargs[TRANSLATE_ARGS['dataset_path']] = dataset_path
         re_exportargs[TRANSLATE_ARGS['log_path']] = output_path

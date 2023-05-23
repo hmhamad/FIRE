@@ -4,7 +4,7 @@ The FIRE Dataset is a dataset of named entities and relations in the financial d
 
 ## Description
 
-FIRE is a novel dataset focused on the extraction of financial relations in business and financial documents. It features 13 types of entities and 15 types of relations and can be used to train and evaluate machine learning models in the task of financial joint named entity recognition and relation extraction.
+FIRE is a dataset focused on the extraction of financial relations in business and financial documents. It features 13 types of entities and 15 types of relations and can be used to train and evaluate machine learning models in the task of financial joint named entity recognition and relation extraction.
 
 Here is an example instance from the dataset and how it is represented in json format:
 
@@ -53,8 +53,13 @@ pip install -r requirements.txt
 You can reproduce the results from our paper by running the provided scripts. For example, to run SpERT model:
 
 ```bash
-python main.py --mode train --model spert --exp baseline
+python main.py --mode train --model spert
 ```
+
+For Rebel, you might face a bug when loading model to evaluate on test set due to versioning conflicts. See this issue https://github.com/Babelscape/rebel/issues/55.
+The quick fix proposed from the author is to comment out the line in the pytorch_lighting source code:
+File "python3.8/site-packages/pytorch_lightning/core/saving.py", line 157, in load_from_checkpoint
+checkpoint[cls.CHECKPOINT_HYPER_PARAMS_KEY].update(kwargs)
 
 ## Citing Our Work
 
@@ -63,7 +68,7 @@ If you use the FIRE Dataset in your research, please cite our paper:
 ```bibtex
 @article{Hassan2023fire,
   title={FIRE: A Dataset for FInancial Relation Extraction},
-  author={Hassan Hamad, Abhinav Thakur, Keith M. Chugg, Sujith Pulikodan and Nijil Kolleri},
+  author={Hassan Hamad, Abhinav Thakur, Sujith Pulikodan, Nijil Kolleri and Keith M. Chugg},
   journal={arXiv preprint arXiv:XXXX.XXXX},
   year={2023}
 }

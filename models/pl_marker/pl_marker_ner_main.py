@@ -980,7 +980,7 @@ def call_pl_marker_ner(importargs=None):
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
 
         model.to(args.device)
-        result = evaluate(args, model, tokenizer, data_file_path = args.data_file)
+        result = evaluate(args, model, tokenizer, prefix = 'test', data_file_path = args.data_file)
 
         if args.do_test:
             result = dict((k, v) for k, v in result.items())
