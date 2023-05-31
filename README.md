@@ -30,9 +30,9 @@ Here is an example instance from the dataset and how it is represented in json f
 
 | Split  | # of Instances | # of Entity Mentions | # of Relation Mentions |
 | ------ | -------------- | -------------------- | ---------------------- |
-| Train  | xxx            | xxx                  | xxx                    |
-| Dev    | xxx            | xxx                  | xxx                    |
-| Test   | xxx            | xxx                  | xxx                    |
+| Train  | 1,995          | 10,566               | 5,812                  |
+| Dev    | 427            | 2,233                | 1,213                  |
+| Test   | 427            | 2,297                | 1,296                  |
 
 ## Setup Instructions
 
