@@ -1,12 +1,15 @@
-# FIRE Dataset ![Logo](logo.png)
+# FIRE Dataset
 
-The FIRE Dataset is a dataset of named entities and relations in the financial domain. Our paper "FIRE: A Dataset for FInancial Relation Extraction" is available on [arXiv](https://arxiv.org/abs/XXXX.XXXX).
+The FIRE Dataset is a dataset of named entities and relations in the financial domain. Our paper "FIRE: A Dataset for FInancial Relation Extraction" is available at [arXiv](https://arxiv.org/abs/XXXX.XXXX).
 
 ## Description
 
-FIRE is a dataset focused on the extraction of financial relations in business and financial documents. It features 13 types of entities and 15 types of relations and can be used to train and evaluate machine learning models in the task of financial joint named entity recognition and relation extraction.
+FIRE features 13 types of entities and 15 types of relations and can be used to train and evaluate machine learning models in the task of financial joint named entity recognition and relation extraction.
 
 Here is an example instance from the dataset and how it is represented in json format:
+<p align="center">
+  <img src="fire_example.png"/>
+</p>
 
 ```json
 {
@@ -15,7 +18,7 @@ Here is an example instance from the dataset and how it is represented in json f
         {"type": "FinancialEntity", "start": 0, "end": 1},
         {"type": "Company", "start": 2, "end": 3},
         {"type": "Quantity", "start": 4, "end": 5},
-        {"type": "Date", "start": 7, "end": 8},
+        {"type": "Date", "start": 7, "end": 9},
     ],
     "relations": [
         {"type": "propertyof", "head": 0, "tail": 1},
@@ -25,7 +28,11 @@ Here is an example instance from the dataset and how it is represented in json f
     "duration": 42,
 }
 ```
-
+Similar to the above example, each instance in the dataset contains four fields as follows:
+- tokens: The raw text of the sentence represented as a list of tokens.
+- entities: A list of named entities in the sentence. Each named entity is represented by a dictionary with keys: type (indicating the entity type), start and end, indicating the start(inclusive) and end(exclusive) token positions of the entity in the sentence.
+- relations: A list of relations in the sentence. Each relation is represented by a dictionary with keys: type (indicating the relation type), head and tail (indicating the entity indices involved in the relation)
+- duration: The time, in seconds, it took the human annotator to finish labeling this instance.
 ## Dataset Statistics
 
 | Split  | # of Instances | # of Entity Mentions | # of Relation Mentions |
