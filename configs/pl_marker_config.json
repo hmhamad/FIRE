@@ -1,7 +1,7 @@
 {
     "n_random_iter": 5,
     "seed": 42,
-    "device_id": 1,
+    "device_id": 0,
     "model_path": "bert-base-cased",
     "data_dir": "fire",
     "train_path": "fire/fire_train.json",

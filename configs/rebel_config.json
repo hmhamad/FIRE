@@ -1,7 +1,7 @@
 {
     "n_random_iter": 5,
-    "gpus": [2],
-    "seed": 42,
+    "gpus": [0],
+    "seed": 43,
     "num_train_epochs": 30,
     "train_batch_size": 2,
     "eval_batch_size": 2,

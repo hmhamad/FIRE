@@ -50,24 +50,38 @@ To set up your Python environment to run the baselines, follow these steps:
 git clone https://github.com/hmhamad/FIRE.git
 cd FIRE
 ```
-2. Install the required packages:
-```bash
-pip install -r requirements.txt
-```
-
+2. Install the required packages for the model you want to run:
+  - For SPERT:
+  ```bash
+  pip install -r spert_requirements.txt
+  ```
+  - For PL-MARKER:
+  ```bash
+  pip install -r pl_marker_requirements.txt
+  pip install --editable ./transformers
+  ```
+  - For REBEL:
+  ```bash
+  pip install -r rebel_requirements.txt
+  ```
+   you might face a bug when loading the REBEL model to evaluate on test set due to versioning conflicts. See this issue https://github.com/Babelscape/rebel/issues/55. The quick fix proposed from the author is to comment out the line in the pytorch_lighting source code: File "python3.8/site-packages/pytorch_lightning/core/saving.py", line 157, in load_from_checkpoint checkpoint[cls.CHECKPOINT_HYPER_PARAMS_KEY].update(kwargs)
 ## Reproducing Results
 
-You can reproduce the results from our paper by running the provided scripts. For example, to run SpERT model:
-
+You can reproduce the results from our paper by running the the `main.py` file with the preset model configuration. A logging directory is then created under the `log` directory. Once training for all iterations is finished, the results are logged in a `mean_std_f1.csv` file.
+For SpERT
 ```bash
 python main.py --mode train --model spert
 ```
+For PL-MARKER
+```bash
+python main.py --mode train --model pl_marker
+```
+For Rebel,
+```bash
+python main.py --mode train --model rebel
+```
 
-For Rebel, you might face a bug when loading model to evaluate on test set due to versioning conflicts. See this issue https://github.com/Babelscape/rebel/issues/55.
-The quick fix proposed from the author is to comment out the line in the pytorch_lighting source code:
-File "python3.8/site-packages/pytorch_lightning/core/saving.py", line 157, in load_from_checkpoint
-checkpoint[cls.CHECKPOINT_HYPER_PARAMS_KEY].update(kwargs)
-
+Each model has a configuration file under the 'configs' directory. You can set gpu_id, adjust hyper-parameters or change training configuration to run a different experiment. To reproduce the results in the paper using the FinBERT model, replace the `model_path` field with `ProsusAI/finbert` in the PL-Marker configuration file or replace the `model_path` and `tokenizer_path` fields with `ProsusAI/finbert` in the SpERT configuration file. This experiment does not apply to the REBEL model.
 ## Citing Our Work
 
 If you use the FIRE Dataset in your research, please cite our paper:
