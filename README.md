@@ -68,6 +68,7 @@ cd FIRE
 ## Reproducing Results
 
 You can reproduce the results from our paper by running the the `main.py` file with the preset model configuration. A logging directory is then created under the `log` directory. Once training for all iterations is finished, the results are logged in a `mean_std_f1.csv` file.
+
 For SpERT
 ```bash
 python main.py --mode train --model spert
