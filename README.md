@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/643674148.svg)](https://zenodo.org/badge/latestdoi/643674148)
+
 # FIRE Dataset
 
 The FIRE Dataset is a dataset of named entities and relations in the financial domain. Our paper "FIRE: A Dataset for FInancial Relation Extraction" is available at [arXiv](https://arxiv.org/abs/XXXX.XXXX).
