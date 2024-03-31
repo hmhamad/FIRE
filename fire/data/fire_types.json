@@ -1,77 +1,97 @@
 {
     "entities": {
+        "Action": {
+            "short": "Action",
+            "verbose": "Action"
+        },
+        "BusinessUnit": {
+            "short": "BusinessUnit",
+            "verbose": "BusinessUnit"
+        },
         "Company": {
             "short": "Company",
             "verbose": "Company"
-        },
-        "FinancialEntity": {
-            "short": "FinancialEntity",
-            "verbose": "FinancialEntity"
-        },
-        "Quantity": {
-            "short": "Quantity",
-            "verbose": "Quantity"
         },
         "Date": {
             "short": "Date",
             "verbose": "Date"
         },
-        "Money": {
-            "short": "Money",
-            "verbose": "Money"
+        "Designation": {
+            "short": "Designation",
+            "verbose": "Designation"
         },
-        "Location": {
-            "short": "Location",
-            "verbose": "Location"
-        },
-        "Action": {
-            "short": "Action",
-            "verbose": "Action"
+        "FinancialEntity": {
+            "short": "FinancialEntity",
+            "verbose": "FinancialEntity"
         },
         "GeopoliticalEntity": {
             "short": "GeopoliticalEntity",
             "verbose": "GeopoliticalEntity"
         },
-        "Product": {
-            "short": "Product",
-            "verbose": "Product"
+        "Location": {
+            "short": "Location",
+            "verbose": "Location"
         },
-        "Designation": {
-            "short": "Designation",
-            "verbose": "Designation"
-        },
-        "Sector": {
-            "short": "Sector",
-            "verbose": "Sector"
+        "Money": {
+            "short": "Money",
+            "verbose": "Money"
         },
         "Person": {
             "short": "Person",
             "verbose": "Person"
         },
-        "BusinessUnit": {
-            "short": "BusinessUnit",
-            "verbose": "BusinessUnit"
+        "Product": {
+            "short": "Product",
+            "verbose": "Product"
+        },
+        "Quantity": {
+            "short": "Quantity",
+            "verbose": "Quantity"
+        },
+        "Sector": {
+            "short": "Sector",
+            "verbose": "Sector"
         }
     },
     "relations": {
-        "ValueChangeDecreaseby": {
-            "short": "ValueChangeDecreaseby",
-            "verbose": "ValueChangeDecreaseby",
+        "ActionBuy": {
+            "short": "ActionBuy",
+            "verbose": "ActionBuy",
             "symmetric": false
         },
-        "Valuein": {
-            "short": "Valuein",
-            "verbose": "Valuein",
+        "Actionin": {
+            "short": "Actionin",
+            "verbose": "Actionin",
             "symmetric": false
         },
-        "Value": {
-            "short": "Value",
-            "verbose": "Value",
+        "ActionMerge": {
+            "short": "ActionMerge",
+            "verbose": "ActionMerge",
+            "symmetric": true
+        },
+        "ActionSell": {
+            "short": "ActionSell",
+            "verbose": "ActionSell",
             "symmetric": false
         },
-        "ValueChangeIncreaseby": {
-            "short": "ValueChangeIncreaseby",
-            "verbose": "ValueChangeIncreaseby",
+        "Actionto": {
+            "short": "Actionto",
+            "verbose": "Actionto",
+            "symmetric": false
+        },
+        "Constituentof": {
+            "short": "Constituentof",
+            "verbose": "Constituentof",
+            "symmetric": false
+        },
+        "Designation": {
+            "short": "Designation",
+            "verbose": "Designation",
+            "symmetric": false
+        },
+        "Employeeof": {
+            "short": "Employeeof",
+            "verbose": "Employeeof",
             "symmetric": false
         },
         "Locatedin": {
@@ -79,29 +99,19 @@
             "verbose": "Locatedin",
             "symmetric": false
         },
-        "ActionSell": {
-            "short": "ActionSell",
-            "verbose": "ActionSell",
-            "symmetric": false
-        },
-        "Quantity": {
-            "short": "Quantity",
-            "verbose": "Quantity",
-            "symmetric": false
-        },
-        "ActionBuy": {
-            "short": "ActionBuy",
-            "verbose": "ActionBuy",
-            "symmetric": false
-        },
         "Productof": {
             "short": "Productof",
             "verbose": "Productof",
             "symmetric": false
         },
-        "Employeeof": {
-            "short": "Employeeof",
-            "verbose": "Employeeof",
+        "Propertyof": {
+            "short": "Propertyof",
+            "verbose": "Propertyof",
+            "symmetric": false
+        },
+        "Quantity": {
+            "short": "Quantity",
+            "verbose": "Quantity",
             "symmetric": false
         },
         "Sector": {
@@ -114,19 +124,24 @@
             "verbose": "Subsidiaryof",
             "symmetric": false
         },
-        "Designation": {
-            "short": "Designation",
-            "verbose": "Designation",
+        "Value": {
+            "short": "Value",
+            "verbose": "Value",
             "symmetric": false
         },
-        "Actionin": {
-            "short": "Actionin",
-            "verbose": "Actionin",
+        "ValueChangeDecreaseby": {
+            "short": "ValueChangeDecreaseby",
+            "verbose": "ValueChangeDecreaseby",
             "symmetric": false
         },
-        "Propertyof": {
-            "short": "Propertyof",
-            "verbose": "Propertyof",
+        "Valuein": {
+            "short": "Valuein",
+            "verbose": "Valuein",
+            "symmetric": false
+        },
+        "ValueChangeIncreaseby": {
+            "short": "ValueChangeIncreaseby",
+            "verbose": "ValueChangeIncreaseby",
             "symmetric": false
         }
     }
