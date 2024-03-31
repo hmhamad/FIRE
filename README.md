@@ -6,7 +6,7 @@ The FIRE Dataset is a dataset of named entities and relations in the financial d
 
 ## Description
 
-FIRE features 13 types of entities and 15 types of relations and can be used to train and evaluate machine learning models in the task of financial joint named entity recognition and relation extraction.
+FIRE features 13 types of entities and 18 types of relations and can be used to train and evaluate machine learning models in the task of financial joint named entity recognition and relation extraction.
 
 Here is an example instance from the dataset and how it is represented in json format:
 <p align="center">
@@ -39,9 +39,9 @@ Similar to the above example, each instance in the dataset contains four fields 
 
 | Split  | # of Instances | # of Entity Mentions | # of Relation Mentions |
 | ------ | -------------- | -------------------- | ---------------------- |
-| Train  | 1,995          | 10,566               | 5,812                  |
-| Dev    | 427            | 2,233                | 1,213                  |
-| Test   | 427            | 2,297                | 1,296                  |
+| Train  | 2,117          | 10,789               | 5,928                  |
+| Dev    | 454            | 2,294                | 1,225                  |
+| Test   | 454            | 2,251                | 1,213                  |
 
 ## Setup Instructions
 
@@ -66,7 +66,7 @@ cd FIRE
   ```bash
   pip install -r rebel_requirements.txt
   ```
-   you might face a bug when loading the REBEL model to evaluate on test set due to versioning conflicts. See this issue https://github.com/Babelscape/rebel/issues/55. The quick fix proposed from the author is to comment out the line in the pytorch_lighting source code: File "python3.8/site-packages/pytorch_lightning/core/saving.py", line 157, in load_from_checkpoint checkpoint[cls.CHECKPOINT_HYPER_PARAMS_KEY].update(kwargs)
+   You might face a bug when loading the REBEL model to evaluate on test set due to versioning conflicts. See this issue https://github.com/Babelscape/rebel/issues/55. The quick fix proposed from the author is to comment out the line in the pytorch_lighting source code: File "python3.8/site-packages/pytorch_lightning/core/saving.py", line 157, in load_from_checkpoint checkpoint[cls.CHECKPOINT_HYPER_PARAMS_KEY].update(kwargs)
 ## Reproducing Results
 
 You can reproduce the results from our paper by running the the `main.py` file with the preset model configuration. A logging directory is then created under the `log` directory. Once training for all iterations is finished, the results are logged in a `mean_std_f1.csv` file.
@@ -94,6 +94,6 @@ If you use the FIRE Dataset in your research, please cite our paper:
   title={FIRE: A Dataset for FInancial Relation Extraction},
   author={Hassan Hamad, Abhinav Thakur, Sujith Pulikodan, Nijil Kolleri and Keith M. Chugg},
   journal={arXiv preprint arXiv:XXXX.XXXX},
-  year={2023}
+  year={2024}
 }
 ```
