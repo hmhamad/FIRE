@@ -93,7 +93,7 @@ If you use the FIRE Dataset in your research, please cite our paper:
 @article{Hassan2023fire,
   title={FIRE: A Dataset for FInancial Relation Extraction},
   author={Hassan Hamad, Abhinav Thakur, Sujith Pulikodan, Nijil Kolleri and Keith M. Chugg},
-  journal={arXiv preprint arXiv:XXXX.XXXX},
+  booktitle = "Findings of the Association for Computational Linguistics: NAACL 2024",
   year={2024}
 }
 ```
